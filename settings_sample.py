@@ -8,4 +8,4 @@ DATABASES = {
     }
 }
 
-IMAGE_BASE_URL = 'https://s3-us-west-2.amazonaws.com/kycdocument/'
+IMAGE_BASE_URL = 'image_base_url'
