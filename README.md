@@ -35,7 +35,8 @@ This repository aims to equip user with scripts for downloading all the document
  
 ### Instructions:
 - Clone the repo
-- Make a virtual enviroment and install all the packages from `requirements.txt`
+- Make a virtual enviroment and install all the packages from `requirements.txt` using the command:
+
   `pip install -r requirements.txt`
 - Make a `settings.py` using `settings_sample.py` file with actual values
 - Change the code in the class `DocumentDownloader` in `documents_downloader.py` according to ones need
