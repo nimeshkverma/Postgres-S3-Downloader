@@ -1,0 +1,12 @@
+venv
+fvenv
+.env
+*.pyc
+settings.py
+*.log
+.cache
+*.swp
+*.swo
+*.DS_Store
+db.sqlite3
+
