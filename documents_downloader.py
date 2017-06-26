@@ -64,11 +64,13 @@ class DocumentDownloader(object):
                     self.__file_downloader(url, file_name)
 
 if __name__ == '__main__':
-    customer_id = sys.argv[1]
-    try:
-        customer_id = int(customer_id)
-        document_downloader = DocumentDownloader(customer_id)
-        document_downloader.download()
-    except Exception as e:
-        print "Please provide the correct customer_id"
-        print "Error: {error}".format(error=str(e))
+    for customer_id in sys.argv[1:]:
+        try:
+            print 'Execution Start for the customer_id: ' + customer_id
+            customer_id = int(customer_id)
+            document_downloader = DocumentDownloader(customer_id)
+            document_downloader.download()
+            print 'Execution End for the customer_id: ' + customer_id
+        except Exception as e:
+            print "Please provide the correct customer_id"
+            print "Error: {error}".format(error=str(e))
