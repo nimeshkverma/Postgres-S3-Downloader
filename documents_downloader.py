@@ -8,8 +8,8 @@ from service.database_service import Database
 
 class DocumentDownloader(object):
 
-    def __init__(self, customer_id, original_file_name=True):
-        self.db = Database()
+    def __init__(self, customer_id, db, original_file_name=True):
+        self.db = db
         self.customer_id = customer_id
         self.original_file_name = original_file_name
         self.documents_sql_query = self.__documents_sql_query()
@@ -64,13 +64,15 @@ class DocumentDownloader(object):
                     self.__file_downloader(url, file_name)
 
 if __name__ == '__main__':
+    db = Database()
     for customer_id in sys.argv[1:]:
         try:
             print 'Execution Start for the customer_id: ' + customer_id
             customer_id = int(customer_id)
-            document_downloader = DocumentDownloader(customer_id)
+            document_downloader = DocumentDownloader(customer_id, db)
             document_downloader.download()
-            print 'Execution End for the customer_id: ' + customer_id
+            print 'Execution End for the customer_id: ' + str(customer_id)
         except Exception as e:
             print "Please provide the correct customer_id"
             print "Error: {error}".format(error=str(e))
+    db.close_connection()
