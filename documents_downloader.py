@@ -49,7 +49,7 @@ class DocumentDownloader(object):
         if self.original_file_name:
             file_name = url.split('/')[-1]
         print "Downloading File: {file_name} from URL: {url}".format(file_name=file_name, url=url)
-        r = requests.get(url, timeout=20)
+        r = requests.get(url, timeout=60)
         if r.status_code == 200:
             with open(file_name, 'wb') as f:
                 f.write(r.content)
