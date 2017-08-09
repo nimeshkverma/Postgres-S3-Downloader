@@ -9,3 +9,5 @@ DATABASES = {
 }
 
 IMAGE_BASE_URL = 'image_base_url'
+
+WINDOWS = False
